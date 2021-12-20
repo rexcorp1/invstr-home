@@ -38,19 +38,20 @@ const ResponsiveAppBar = () => {
       <AppBar position="relative" style={{ backgroundColor: `#fff`, paddingBottom: 16, paddingTop: 16 }}>
         <Container maxWidth="lg">
           <Toolbar disableGutters>
-            <Link
-                to="/"
-              >
-              <StaticImage
-                src="../images/assets/LandX-logo.webp"
-                width={100}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
-                style={{ marginRight: `6rem` }}
-              />
-            </Link>
+            
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <Link
+                  to="/"
+                >
+                <StaticImage
+                  src="../../assets/images/icons/LandX-logo.webp"
+                  width={400}
+                  quality={95}
+                  formats={["auto", "webp", "avif"]}
+                  alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                  style={{ marginRight: `6rem` }}
+                />
+              </Link>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -85,19 +86,19 @@ const ResponsiveAppBar = () => {
                 ))}
               </Menu>
             </Box>
-              <Link
-                to="/"
-              >
-                <StaticImage
-                  src="images/assets/LandX-logo.webp"
-                  width={300}
-                  quality={95}
-                  formats={["auto", "webp", "avif"]}
-                  alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
-                  style={{ marginBottom: `1.45rem` }}
-                />
-              </Link>
-            <Box className="links" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+             
+            <Box className="links" sx={{ flexGrow: 1, alignItems:'center', display: { xs: 'none', md: 'flex' } }}>
+                <Link
+                    to="/"
+                  >
+                  <StaticImage
+                    src="../../assets/images/icons/LandX-logo.webp"
+                    width={100}
+                    quality={95}
+                    formats={["auto", "webp", "avif"]}
+                    alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                  />
+                </Link>
                 <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
                 <AnchorLink to='/#ongoing-projects'>Proyek</AnchorLink>
                 <AnchorLink to='/#how-it-works'>Cara Kerja</AnchorLink>
