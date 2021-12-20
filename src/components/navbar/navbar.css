@@ -1,0 +1,20 @@
+.links a {
+    color: #5e798d;
+    text-decoration: none;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.register-company {
+    font-size: 14px !important;
+    font-family: 'Inter' !important;
+    font-weight: 600 !important;
+    background-color: #2dbe60 !important;
+    color: #fff !important;
+    padding: 8px 16px;
+
+}
+    /* padding-top: 0px; */
+    /* display: inline-flex; */
+    /* align-items: flex-start; */
+    

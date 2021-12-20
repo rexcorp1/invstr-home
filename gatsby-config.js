@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Investasi dan Miliki Bisnis Menguntungkan Mulai dari 1 Jutaan di LandX`,
+    description: `LandX adalah platform equity crowdfunding terpercaya yang telah berizin dan diawasi OJK. Equity crowdfunding merupakan skema investasi ke UKM potensial dengan modal 1 Jutaan`,
+    author: `@landx`,
+    siteUrl: `https://landx.id/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,6 +14,21 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Inter`,
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -28,7 +43,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/assets/LandX-faveicon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
