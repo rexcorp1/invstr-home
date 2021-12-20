@@ -13,7 +13,7 @@ import { Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import Header from "../header/header"
-import "./layout.css"
+import "./layout.scss"
 
 const theme = themeconfig
 const Layout = ({ children }) => {
