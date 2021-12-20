@@ -45,7 +45,7 @@ const ResponsiveAppBar = () => {
                 >
                 <StaticImage
                   src="../../assets/images/icons/LandX-logo.webp"
-                  width={400}
+                  width={100}
                   quality={95}
                   formats={["auto", "webp", "avif"]}
                   alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
