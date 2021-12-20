@@ -9,10 +9,13 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Container from '@mui/material/Container';
-
-import Header from "./header"
+import { Button } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { themeconfig } from '../../assets/styling/themeConfig';
+import Header from "../header/header"
 import "./layout.css"
 
+const theme = themeconfig
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -26,19 +29,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Container maxWidth="lg" style={{ marginTop: `12rem` }}>
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Container maxWidth="lg" style={{ marginTop: `12rem` }}>
+          <Button variant='contained'>Okay</Button>
+          <main>{children}</main>
+        </Container>
+      </ThemeProvider>
     </>
   )
 }
