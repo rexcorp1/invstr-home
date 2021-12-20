@@ -128,7 +128,7 @@ const ResponsiveAppBar = () => {
                   <MenuItem onClick={handleClose}>FAQ</MenuItem>
                 </Menu>
             </Box>
-            <Button className="register-company">Pendaftaran Perusahaan</Button>
+            <Button>Pendaftaran Perusahaan</Button>
           </Toolbar>
         </Container>
       </AppBar>

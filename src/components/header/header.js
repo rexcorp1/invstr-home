@@ -1,10 +1,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import Box from '@mui/material/Box';
-
-
-import ResponsiveAppBar from "./navbar/navbar"
-import Alerts from "./alert/alert"
+import ResponsiveAppBar from "../navbar/navbar"
+import Alerts from "../alert/alert"
 
 const Header = ({ siteTitle }) => (
   <Box style={{ position: `fixed`, top: 0, right: 0, left: 0, zIndex: 1030 }}>

@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 import { Box } from '@mui/material';
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/layout/layout"
+import Seo from "../components/seo/seo"
 
 
 const IndexPage = () => (
