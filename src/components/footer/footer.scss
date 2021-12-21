@@ -30,5 +30,10 @@
 .footer-fcolor {
     color: #5e798d !important;
     font-weight: 600 !important;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem !important;
+}
+
+.footer-icon-link {
+    margin-right: 1rem;
+    cursor: pointer;
 }

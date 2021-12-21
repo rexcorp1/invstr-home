@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Box, Typography, Link, Container, Grid } from '@mui/material';
+import { Box, Typography, Link, Container, Grid, MenuList, MenuItem } from '@mui/material';
 import { StaticImage } from "gatsby-plugin-image"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import "./footer.scss";
 
@@ -16,7 +17,7 @@ const Footer = () => {
                         <br/>
                         Unduh aplikasi LandX sekarang!
                     </Typography>
-                    <Box style={{ paddingBottom:25 }}>
+                    <Grid md={12} xs={12} style={{ paddingBottom:25 }}>
                         <Link>
                             <StaticImage
                                 src="../../assets/images/icons/LandX-PlayStore.webp"
@@ -26,7 +27,7 @@ const Footer = () => {
                                 alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
                             />
                         </Link>
-
+                        
                         <Link>
                             <StaticImage
                                 src="../../assets/images/icons/LandX-AppStore.webp"
@@ -35,8 +36,8 @@ const Footer = () => {
                                 formats={["auto", "webp", "avif"]}
                                 alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
                             />
-                        </Link>
-                    </Box>
+                        </Link>        
+                    </Grid>
                 </Box>
             </Container>
         </Box>
@@ -99,7 +100,7 @@ const Footer = () => {
             </Grid>
             <hr/>
 
-            <Grid container spacing={2} style={{ textAlignLast:`left` }}>
+            <Grid container spacing={2} style={{ textAlignLast:`left`, marginBottom:`3rem` }}>
                 <Grid xs={12} md={6} style={{ paddingLeft:`1rem`, paddingRight:`1rem` }}>
                     <Typography className="footer-fcolor" display="block" style={{ marginTop:`3rem`, marginBottom:`2rem` }}>
                         Disclaimer
@@ -116,6 +117,90 @@ const Footer = () => {
                         <br/> <br/>
                         c.  PENERBIT SAHAM DAN PENYELENGGARA, BAIK SENDIRI-SENDIRI MAUPUN BERSAMA-SAMA, BERTANGGUNG JAWAB SEPENUHNYA ATAS KEBENARAN SEMUA INFORMASI YANG TERCANTUM DALAM LAYANAN URUN DANA INI.
                     </Typography>
+                </Grid>
+            </Grid>
+            <hr/>
+
+            <Grid container spacing={2} style={{ marginTop:`3rem` }}>
+                <Grid xs={12} md={3}>
+                    <MenuList>
+                        <MenuItem>
+                            <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <AnchorLink to='/#ongoing-projects'>Proyek</AnchorLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <AnchorLink to='/#how-it-works'>Cara Kerja</AnchorLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/contact'>Kontak</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='https://landx.id/blog/'>Blog</Link>
+                        </MenuItem>
+                    </MenuList>
+                </Grid>
+
+                <Grid xs={12} md={3}>
+                    <MenuList>
+                        <MenuItem>
+                            <Typography>Perusahaan</Typography>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/blog/jobs-at-landx/'>Karir</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/service-level-agreement'>Service Level Agreement</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link to='https://landx.id/blog/faq-landx/'>FAQ</Link>
+                        </MenuItem>
+                    </MenuList>
+                </Grid>
+                <Grid xs={12} md={6} style={{ textAlignLast:`left`}}>
+                    <Link className="footer-icon-link">
+                        <StaticImage
+                            src="../../assets/images/icons/LandX-Linkedin.svg"
+                            height={32}
+                            quality={95}
+                            formats={["auto", "webp", "avif"]}
+                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                        />
+                    </Link>
+                    <Link className="footer-icon-link">
+                        <StaticImage
+                            src="../../assets/images/icons/LandX-Facebook.svg"
+                            height={32}
+                            quality={95}
+                            formats={["auto", "webp", "avif"]}
+                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                        />
+                    </Link>
+                    <Link className="footer-icon-link">
+                        <StaticImage
+                            src="../../assets/images/icons/LandX-Instagram.svg"
+                            height={32}
+                            quality={95}
+                            formats={["auto", "webp", "avif"]}
+                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                        />
+                    </Link>
+                    <Typography style={{ color:`#5e798d`, textAlignLast:`left`, marginTop:`2rem` }} display="block">
+                        © 2020 LandX Indonesia. All Rights Reserved.
+                    </Typography>   
                 </Grid>
             </Grid>
         </Container>
