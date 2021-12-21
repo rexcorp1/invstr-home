@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import "./navbar.css"
+import "./navbar.scss"
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
