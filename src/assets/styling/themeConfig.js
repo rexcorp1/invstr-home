@@ -91,7 +91,7 @@ export const themeconfig = createTheme({
       contrastText: 'rgba(255,255,255,0.87)',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#5e798d',
       contrastText: '#2DBE60',
     },
     accent1: {
