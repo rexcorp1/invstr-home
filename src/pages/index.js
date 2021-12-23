@@ -5,6 +5,7 @@ import { Container, Grid, Typography, Card, Chip, CardContent, CardMedia, Linear
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
 import './index.scss';
+// import "../assets/styling/style.scss"
 
 export const CardWhyLandx = ({ title, content, logo }) => {
   return (
@@ -27,7 +28,6 @@ export const CardWhyLandx = ({ title, content, logo }) => {
     </Grid>
   )
 }
-
 
 const IndexPage = () => (
   <Layout>
@@ -68,7 +68,7 @@ const IndexPage = () => (
 
     <main>
       <section>
-        <Container>
+        <Container id="why-landx">
           <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
             <Grid item>
               <Typography variant='h4' sx={{ marginBottom: '5px' }}>71.674</Typography>
