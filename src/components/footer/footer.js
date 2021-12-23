@@ -1,42 +1,37 @@
 import * as React from 'react';
 import { Box, Typography, Link, Container, Grid, MenuList, MenuItem } from '@mui/material';
-import { StaticImage } from "gatsby-plugin-image"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import "./footer.scss";
 
+
 const Footer = () => {
 
   return (
-    <Box className="footer-background">
-        <Box style={{ position:`relative` }}>
+      <Box className="footer-background">
+        <Box style={{ position: `relative` }}>
             <Container maxWidth="lg" className="footer-CTA-move">
                 <Box className="footer-CTA-background">
                     <Typography variant="h2" color="primary" className="footer-font">
                         Kini memiliki bisnis dan properti jadi jauh lebih mudah.
-                        <br/>
+                        <br />
                         Unduh aplikasi LandX sekarang!
                     </Typography>
-                    <Grid md={12} xs={12} style={{ paddingBottom:25 }}>
-                        <Link>
-                            <StaticImage
-                                src="../../assets/images/icons/LandX-PlayStore.webp"
-                                height={130}
-                                quality={95}
-                                formats={["auto", "webp", "avif"]}
-                                alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                    <Grid md={12} xs={12} style={{ paddingBottom: 25 }}>
+                        <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+                            <img 
+                                src="./images/LandX-PlayStore.webp" 
+                                alt="Play Store"
+                                title="Play Store"
                             />
                         </Link>
-                        
-                        <Link>
-                            <StaticImage
-                                src="../../assets/images/icons/LandX-AppStore.webp"
-                                height={130}
-                                quality={95}
-                                formats={["auto", "webp", "avif"]}
-                                alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                        <Link href="https://apps.apple.com/id/app/landx/id1453823676">
+                            <img 
+                                src="./images/LandX-AppStore.webp" 
+                                alt="App Store"
+                                title="App Store"
                             />
-                        </Link>        
+                        </Link>
                     </Grid>
                 </Box>
             </Container>
@@ -44,82 +39,73 @@ const Footer = () => {
 
         <Container maxWidth="lg" style={{ textAlignLast:`center`, paddingTop:`11rem`, paddingBottom:`3rem` }} >
             <Typography className="footer-fcolor mt-4" display="block">
-                BERIZIN & DIAWASI OLEH
+                    BERIZIN & DIAWASI OLEH
             </Typography>
-
-            <StaticImage
-                src="../../assets/images/icons/LandX-OJK.webp"
-                height={300}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
-                style= {{ marginBottom:`3rem` }}
+            <img 
+                src="./images/LandX-OJK.webp" 
+                alt="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
+                title="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
+                style={{ marginBottom: `3rem` }}
             />
-            <hr/>
+            <hr />
 
-            <Grid container spacing={2} style={{ marginTop:`5rem`, marginBottom:`4rem`, textAlign:`center` }}>
+            <Grid container spacing={2} style={{ marginTop: `5rem`, marginBottom: `4rem`, textAlign: `center` }}>
                 <Grid xs={12} md={4}>
                     <Typography className="footer-fcolor" display="block">
                         TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA
                     </Typography>
-                    <StaticImage
-                        src="../../assets/images/icons/LandX-Kemkominfo.webp"
-                        height={300}
-                        quality={95}
-                        formats={["auto", "webp", "avif"]}
+                    <img 
+                        src="./images/LandX-Kemkominfo.webp" 
                         alt="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
-                        style= {{ marginBottom:`3rem` }}
+                        title="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
+                        style={{ marginBottom: `3rem` }}
                     />
                 </Grid>
                 <Grid xs={12} md={4}>
                     <Typography className="footer-fcolor" display="block">
                         DIDUKUNG OLEH
                     </Typography>
-                    <StaticImage
-                        src="../../assets/images/icons/LandX-ISO.webp"
-                        height={300}
-                        quality={95}
-                        formats={["auto", "webp", "avif"]}
+                    <img 
+                        src="./images/LandX-ISO.webp" 
                         alt="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
-                        style= {{ marginBottom:`3rem` }}
+                        title="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
+                        style={{ marginBottom: `3rem` }}
                     />
                 </Grid>
                 <Grid xs={12} md={4}>
                     <Typography className="footer-fcolor" display="block">
                         MEMBER OF
                     </Typography>
-                    <StaticImage
-                        src="../../assets/images/icons/LandX-ALUDI.webp"
-                        height={300}
-                        quality={95}
-                        formats={["auto", "webp", "avif"]}
+                    <img 
+                        src="./images/LandX-ALUDI.webp" 
                         alt="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
-                        style= {{ marginBottom:`3rem` }}
+                        title="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
+                        style={{ marginBottom: `3rem` }}
                     />
                 </Grid>
             </Grid>
-            <hr/>
+            <hr />
 
-            <Grid container spacing={2} style={{ textAlignLast:`left`, marginBottom:`3rem` }}>
-                <Grid xs={12} md={6} style={{ paddingLeft:`1rem`, paddingRight:`1rem` }}>
-                    <Typography className="footer-fcolor" display="block" style={{ marginTop:`3rem`, marginBottom:`2rem` }}>
-                        Disclaimer
+            <Grid container spacing={2} style={{ textAlignLast: `left`, marginBottom: `3rem` }}>
+                <Grid xs={12} md={6} style={{ paddingLeft: `1rem`, paddingRight: `1rem` }}>
+                    <Typography className="footer-fcolor" display="block" style={{ marginTop: `3rem`, marginBottom: `2rem` }}>
+                    Disclaimer
                     </Typography>
-                    <Typography style={{ color:`#5e798d` }} display="block">
-                        PT Numex Teknologi Indonesia (“LandX” atau “Penyelenggara”) hadir dalam rangka mendukung program pemerintah di bidang perumahan dengan mengembangkan bisnis layanan urun dana bersama, dengan mempertemukan Pemodal dan pihak pengembang properti (“Penerbit”) (selanjutnya Pemodal dan Penerbit disebut bersama-sama sebagai “Pengguna”). Pada layanan urun dana ini, timbulnya hubungan perdata terjadi apabila Pemodal sepakat untuk membeli saham yang ditawarkan oleh Penerbit, sehingga segala risiko yang timbul dari hubungan tersebut akan menjadi tanggung jawab masing-masing pihak. Risiko yang timbul dari hak sebagai Pemodal untuk menerima dividen dari Penerbit merupakan risiko yang wajib ditanggung oleh Pemodal sesuai kebijakan dividen Penerbit. LandX hanya bertindak sebagai layanan urun dana yang mempertemukan antara Pemodal dengan Penerbit, dan tidak bertindak sebagai pelaku usaha yang menjalankan usaha untuk mengumpulkan dana terkait atau pengelola investasi (Penerbit). Sesuai dengan Pasal 23 Peraturan Otoritas Jasa Keuangan No. 37 Tahun 2018 tentang Layanan Urun Dana melalui Penawaran Saham Berbasis Teknologi Informasi atau Equity Crowdfunding (“POJK 37/2018”), kami menyatakan bahwa:
+                    <Typography style={{ color: `#5e798d` }} display="block">
+                    PT Numex Teknologi Indonesia (“LandX” atau “Penyelenggara”) hadir dalam rangka mendukung program pemerintah di bidang perumahan dengan mengembangkan bisnis layanan urun dana bersama, dengan mempertemukan Pemodal dan pihak pengembang properti (“Penerbit”) (selanjutnya Pemodal dan Penerbit disebut bersama-sama sebagai “Pengguna”). Pada layanan urun dana ini, timbulnya hubungan perdata terjadi apabila Pemodal sepakat untuk membeli saham yang ditawarkan oleh Penerbit, sehingga segala risiko yang timbul dari hubungan tersebut akan menjadi tanggung jawab masing-masing pihak. Risiko yang timbul dari hak sebagai Pemodal untuk menerima dividen dari Penerbit merupakan risiko yang wajib ditanggung oleh Pemodal sesuai kebijakan dividen Penerbit. LandX hanya bertindak sebagai layanan urun dana yang mempertemukan antara Pemodal dengan Penerbit, dan tidak bertindak sebagai pelaku usaha yang menjalankan usaha untuk mengumpulkan dana terkait atau pengelola investasi (Penerbit). Sesuai dengan Pasal 23 Peraturan Otoritas Jasa Keuangan No. 37 Tahun 2018 tentang Layanan Urun Dana melalui Penawaran Saham Berbasis Teknologi Informasi atau Equity Crowdfunding (“POJK 37/2018”), kami menyatakan bahwa:
                     </Typography>
                 </Grid>
-                <Grid xs={12} md={6} style={{ paddingLeft:`1rem`, marginTop:`6.5rem` }}>
-                    <Typography style={{ color:`#5e798d` }} display="block">
+                <Grid xs={12} md={6} className="mt-4" style={{ paddingLeft: `1rem`, marginTop: `7.5rem` }}>
+                    <Typography style={{ color: `#5e798d` }} display="block">
                         a.  OTORITAS JASA KEUANGAN TIDAK MEMBERIKAN PERNYATAAN MENYETUJUI ATAU TIDAK MENYETUJUI EFEK INI, TIDAK JUGA MENYATAKAN KEBENARAN ATAU KECUKUPAN INFORMASI DALAM LAYANAN URUN DANA INI. SETIAP PERNYATAAN YANG BERTENTANGAN DENGAN HAL TERSEBUT ADALAH PERBUATAN MELANGGAR HUKUM.
-                        <br/> <br/>
+                        <br /> <br />
                         b.  INFORMASI DALAM LAYANAN URUN DANA INI PENTING DAN PERLU MENDAPAT PERHATIAN SEGERA. APABILA TERDAPAT KERAGUAN PADA TINDAKAN YANG AKAN DIAMBIL, SEBAIKNYA BERKONSULTASI DENGAN PENYELENGGARA.
-                        <br/> <br/>
+                        <br /> <br />
                         c.  PENERBIT SAHAM DAN PENYELENGGARA, BAIK SENDIRI-SENDIRI MAUPUN BERSAMA-SAMA, BERTANGGUNG JAWAB SEPENUHNYA ATAS KEBENARAN SEMUA INFORMASI YANG TERCANTUM DALAM LAYANAN URUN DANA INI.
                     </Typography>
                 </Grid>
             </Grid>
-            <hr/>
+            <hr />
 
             <Grid container spacing={2} style={{ marginTop:`3rem` }}>
                 <Grid xs={12} md={3} className="footer-menu-one mb-3">
@@ -137,7 +123,7 @@ const Footer = () => {
                             <Link to='/contact'>Kontak</Link>
                         </MenuItem>
                         <MenuItem>
-                            <Link to='https://landx.id/blog/'>Blog</Link>
+                            <Link href="https://landx.id/blog/">Blog</Link>
                         </MenuItem>
                     </MenuList>
                 </Grid>
@@ -164,36 +150,33 @@ const Footer = () => {
                             <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
                         </MenuItem>
                         <MenuItem>
-                            <Link to='https://landx.id/blog/faq-landx/'>FAQ</Link>
+                            <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
                         </MenuItem>
                     </MenuList>
                 </Grid>
                 <Grid xs={12} md={6} className="ml-1" style={{ textAlignLast:`left`}}>
-                    <Link className="footer-icon-link">
-                        <StaticImage
-                            src="../../assets/images/icons/LandX-Linkedin.svg"
-                            height={32}
-                            quality={95}
-                            formats={["auto", "webp", "avif"]}
-                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                    <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+                        <img 
+                            src="./images/LandX-Linkedin.svg" 
+                            alt="LandX LinkedIn"
+                            title="LandX LinkedIn"
+                            width={32}
                         />
                     </Link>
-                    <Link className="footer-icon-link">
-                        <StaticImage
-                            src="../../assets/images/icons/LandX-Facebook.svg"
-                            height={32}
-                            quality={95}
-                            formats={["auto", "webp", "avif"]}
-                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                    <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+                        <img 
+                            src="./images/LandX-Facebook.svg" 
+                            alt="LandX Facebook"
+                            title="LandX Facebook"
+                            width={32}
                         />
                     </Link>
-                    <Link className="footer-icon-link">
-                        <StaticImage
-                            src="../../assets/images/icons/LandX-Instagram.svg"
-                            height={32}
-                            quality={95}
-                            formats={["auto", "webp", "avif"]}
-                            alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
+                    <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+                        <img 
+                            src="./images/LandX-Instagram.svg" 
+                            alt="LandX Instagram"
+                            title="LandX Instagram"
+                            width={32}
                         />
                     </Link>
                     <Typography style={{ color:`#5e798d`, textAlignLast:`left`, marginTop:`2rem` }} display="block">
@@ -203,7 +186,7 @@ const Footer = () => {
             </Grid>
         </Container>
     </Box>
-  );
+  )
 }
 
 export default Footer;
