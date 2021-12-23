@@ -12,6 +12,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import Header from "../header/header"
 import "./layout.scss"
+import Footer from "../footer/footer";
 
 const theme = themeconfig
 const Layout = ({ children }) => {

@@ -1,0 +1,39 @@
+.footer-background {
+    background-color: #f8f8f8;
+    margin-top: 220px;
+}
+
+.footer-CTA-move {
+    margin: auto;
+    text-align-last: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer-CTA-background {
+    background-image: url("../../assets/images/icons/LandX-Background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 6px 12px #bebebe;
+}
+
+.footer-font {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+    padding: 3rem 1.5rem 3rem 1.5rem;
+}
+
+.footer-fcolor {
+    color: #5e798d !important;
+    font-weight: 600 !important;
+    margin-bottom: 3rem !important;
+}
+
+.footer-icon-link {
+    margin-right: 1rem;
+    cursor: pointer;
+}
