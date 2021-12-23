@@ -1,0 +1,75 @@
+header {
+  &.homepage {
+    background-image: url(../../static/images/header_background.webp);
+    height: 752px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+    font-weight: 500;
+    color: #00a339;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.15px;
+    color: #425766;
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+
+  .playstoreLogo {
+    margin-right: 30px;
+  }
+}
+
+.title-section {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5e798d;
+  margin-bottom: 8px;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background: rgb(54, 51, 51);
+  background: linear-gradient(
+    90deg,
+    rgba(54, 51, 51, 1) 0%,
+    rgba(10, 153, 4, 1) 100%
+  );
+  margin: 20px auto;
+}
+
+.container-card-icon {
+  min-height: 295px;
+  width: 100%;
+  background-image: linear-gradient(#fff, #d8ffeb);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%);
+
+  .card-icon {
+    display: block;
+    height: 72px;
+    width: 72px;
+    margin: 0 auto;
+  }
+
+  .title-icon {
+    font-size: 16px;
+    font-weight: 700;
+    color: #5e798d;
+    margin-bottom: 10px;
+  }
+}
