@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Container, Grid, Typography, Card, Chip, CardContent, CardMedia, LinearProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
+import Carousel from "../components/carousel/carousel"
 import './index.scss';
 // import "../assets/styling/style.scss"
 
@@ -182,6 +183,23 @@ const IndexPage = () => (
             </Card>
           </Grid>
         </Grid>
+      </section>
+
+      <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
+        <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
+          <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid item>
+              <Typography variant="h2" color="secondary" className='title-section'>
+                Artikel Pilihan
+              </Typography>
+              <hr className='divider' />
+            </Grid>
+          </Grid>
+
+          {/* TODO: Get data from API LandX */}
+          <Carousel/>
+
+        </Container>
       </section>
     </main>
 
