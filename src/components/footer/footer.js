@@ -43,7 +43,7 @@ const Footer = () => {
         </Box>
 
         <Container maxWidth="lg" style={{ textAlignLast:`center`, paddingTop:`11rem`, paddingBottom:`3rem` }} >
-            <Typography className="footer-fcolor" display="block">
+            <Typography className="footer-fcolor mt-4" display="block">
                 BERIZIN & DIAWASI OLEH
             </Typography>
 
@@ -122,7 +122,7 @@ const Footer = () => {
             <hr/>
 
             <Grid container spacing={2} style={{ marginTop:`3rem` }}>
-                <Grid xs={12} md={3} className="footer-menu-one">
+                <Grid xs={12} md={3} className="footer-menu-one mb-3">
                     <MenuList>
                         <MenuItem>
                             <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
@@ -168,7 +168,7 @@ const Footer = () => {
                         </MenuItem>
                     </MenuList>
                 </Grid>
-                <Grid xs={12} md={6} style={{ textAlignLast:`left`}}>
+                <Grid xs={12} md={6} className="ml-1" style={{ textAlignLast:`left`}}>
                     <Link className="footer-icon-link">
                         <StaticImage
                             src="../../assets/images/icons/LandX-Linkedin.svg"

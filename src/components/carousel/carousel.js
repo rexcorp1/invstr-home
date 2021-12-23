@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css"
 import "./carousel.scss"
 
 
-const Carousel = ({ show }) => {
+const Carousel = ({ show, datas }) => {
     const settings = {
         dots: true,
         arrows: false,
@@ -34,17 +34,21 @@ const Carousel = ({ show }) => {
             </Box>
             <Box className="card-border">
                 <Box className="card-body">Tiga</Box>
+            </Box>
+            <Box className="card-border">
+                <Box className="card-body">Tiga</Box>
             </Box> 
         </Slider>
     )
 }
 
 Carousel.defaultProps = {
-    show: 3,
+    show: 4,
 }
 
 Carousel.propTypes = {
-    show: PropTypes.number
+    show: PropTypes.number,
+    datas: PropTypes.array.isRequired
 }
 
 export default Carousel
