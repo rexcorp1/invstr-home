@@ -47,11 +47,13 @@ const ResponsiveAppBar = () => {
             <Box>
               <Box sx={{ display: 'flex' }}>
                 {linksName && linksName.map(linkName => (
-                  <MenuItem key={linkName[1]}>
-                    <Typography textAlign="center">
-                      <Link to={linkName[0]} style={{ textDecoration: 'none', color: '#000' }}>{linkName[1]}</Link>
-                    </Typography>
-                  </MenuItem>
+                  <Link to={linkName[0]} style={{ textDecoration: 'none', color: '#000' }} key={linkName[1]}>
+                    <MenuItem>
+                      <Typography textAlign="center">
+                        {linkName[1]}
+                      </Typography>
+                    </MenuItem>
+                  </Link>
                 ))}
 
                 <Stack direction="row" spacing={2}>
