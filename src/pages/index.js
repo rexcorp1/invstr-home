@@ -139,7 +139,7 @@ const IndexPage = () => {
       <section>
         <Container>
           <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-            <ValueInvestor number='71.810' content='Investor Terdaftar' />
+            <ValueInvestor number='71.811' content='Investor Terdaftar' />
             <ValueInvestor number='26' content='Perusahaan Penerbit' />
             <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
             <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
