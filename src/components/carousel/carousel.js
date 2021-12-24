@@ -69,7 +69,7 @@ const Carousel = ({ datas, type }) => {
                             <Typography color="secondary" className="article-title">
                                 {data.title}
                             </Typography>
-                            <Typography color="secondary">
+                            <Typography color="secondary" style={{ height:`9rem` }}>
                                 {data.description}
                             </Typography>
 
