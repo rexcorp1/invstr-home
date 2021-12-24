@@ -1,121 +1,116 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Menu, Container, MenuItem, Typography, Button } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
-
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
-
-import "./navbar.css"
-
-const pages = ['Products', 'Pricing', 'Blog'];
+import { Link } from 'gatsby';
+import { AppBar, Container, Toolbar, Button, ListItemButton, ListItemText, Collapse, List, Box, MenuItem, Typography, Stack, Paper, Popper, MenuList, Grow, ClickAwayListener } from '@mui/material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import "./navbar.scss"
 
 const ResponsiveAppBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
   };
 
-  function handleClick(event) {
-    if (anchorEl !== event.currentTarget) {
-      setAnchorEl(event.currentTarget);
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    } else if (event.key === 'Escape') {
+      setOpen(false);
     }
   }
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
+  const linksName = [
+    ['#why-landx', 'Mengapa Landx'],
+    ['#ongoing-projects', 'Proyek'],
+    ['#how-it-works', 'Cara Kerja'],
+    ['https://landx.id/contact.html', 'Kontak'],
+    ['https://landx.id/blog/', 'Blog']
+  ]
 
 
   return (
     <>
-      <AppBar position="relative" style={{ backgroundColor: `#fff`, paddingBottom: 16, paddingTop: 16 }}>
-        <Container maxWidth="lg">
-          <Toolbar disableGutters>
-            <Link
-                to="/"
-              >
-              <StaticImage
-                src="../../images/assets/LandX-logo.webp"
-                width={100}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt="LandX Platform Equity Crowdfunding Indonesia yang akan membantu investasi bisnis jangka panjang anda"
-                style={{ marginRight: `6rem` }}
-              />
-            </Link>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-              >
-                {/* <MenuIcon /> */}
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+      <AppBar position="static" sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }}>
+        <Container>
+          <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
+            <img src="/images/landx-logo.webp" alt="logo landx" style={{ marginBottom: '0' }} />
+            <Box>
+              <Box sx={{ display: 'flex' }}>
+                {linksName && linksName.map(linkName => (
+                  <MenuItem key={linkName[1]}>
+                    <Typography textAlign="center">
+                      <Link to={linkName[0]} style={{ textDecoration: 'none', color: '#000' }}>{linkName[1]}</Link>
+                    </Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+
+                <Stack direction="row" spacing={2}>
+                  <div>
+                    <MenuItem onClick={handleToggle}>
+                      <Typography textAlign="center"
+                        ref={anchorRef}
+                        id="composition-button"
+                        aria-controls={open ? 'composition-menu' : undefined}
+                        aria-expanded={open ? 'true' : undefined}
+                        aria-haspopup="true"
+                      >
+                        Perusahaan
+                      </Typography>
+                      {open ? <ExpandLess /> : <ExpandMore />}
+                    </MenuItem>
+                    <Popper
+                      open={open}
+                      anchorEl={anchorRef.current}
+                      role={undefined}
+                      placement="bottom-start"
+                      transition
+                      disablePortal
+                    >
+                      {({ TransitionProps, placement }) => (
+                        <Grow
+                          {...TransitionProps}
+                          style={{
+                            transformOrigin:
+                              placement === 'bottom-start' ? 'left top' : 'left bottom',
+                          }}
+                        >
+                          <Paper>
+                            <ClickAwayListener onClickAway={handleClose}>
+                              <MenuList
+                                autoFocusItem={open}
+                                id="composition-menu"
+                                aria-labelledby="composition-button"
+                                onKeyDown={handleListKeyDown}
+                              >
+                                <MenuItem onClick={handleClose}>Karir</MenuItem>
+                                <MenuItem onClick={handleClose}>Syarat & Ketentuan</MenuItem>
+                                <MenuItem onClick={handleClose}>Kebijakan Privasi</MenuItem>
+                                <MenuItem onClick={handleClose}>Service Level Agreement</MenuItem>
+                                <MenuItem onClick={handleClose}>Kebijakan ISMS</MenuItem>
+                                <MenuItem onClick={handleClose}>Mitigasi Resiko</MenuItem>
+                                <MenuItem onClick={handleClose}>FAQ</MenuItem>
+                              </MenuList>
+                            </ClickAwayListener>
+                          </Paper>
+                        </Grow>
+                      )}
+                    </Popper>
+                  </div>
+                </Stack>
+
+              </Box>
             </Box>
-            <Box className="links" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
-                <AnchorLink to='/#ongoing-projects'>Proyek</AnchorLink>
-                <AnchorLink to='/#how-it-works'>Cara Kerja</AnchorLink>
-                <Link to='/contact.html'>Kontak</Link>
-                <Link to='/blog'>Blog</Link>
-                <Link
-                  aria-owns={anchorEl ? "simple-menu" : undefined}
-                  aria-haspopup="true"
-                  onClick={handleClick}
-                  onMouseOver={handleClick}
-                >
-                  Perusahaan
-                </Link>
-                <Menu
-                  id="simple-menu"
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                  MenuListProps={{ onMouseLeave: handleClose }}
-                >
-                  <MenuItem onClick={handleClose}>Karir</MenuItem>
-                  <MenuItem onClick={handleClose}>Syarat & Ketentuan</MenuItem>
-                  <MenuItem onClick={handleClose}>Kebijakan Privasi</MenuItem>
-                  <MenuItem onClick={handleClose}>Service Level Agreement</MenuItem>
-                  <MenuItem onClick={handleClose}>Kebijakan ISMS</MenuItem>
-                  <MenuItem onClick={handleClose}>Mitigasi Risiko</MenuItem>
-                  <MenuItem onClick={handleClose}>FAQ</MenuItem>
-                </Menu>
-            </Box>
-            <Button>Pendaftaran Perusahaan</Button>
+            <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
           </Toolbar>
         </Container>
       </AppBar>

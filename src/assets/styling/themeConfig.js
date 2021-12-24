@@ -7,7 +7,7 @@ import { createTheme } from '@mui/material/styles'
 // const brandgrey200 = '#adbcc8'
 // const brandgrey300 = '#8da1b0'
 // const brandgrey400 = '#768c9e'
-// const brandgrey500 = '#5e798d'
+const brandgrey500 = '#5e798d'
 // const brandgrey600 = '#516a7c'
 // const brandgrey700 = '#425766'
 // const brandgrey800 = '#344450'
@@ -91,7 +91,7 @@ export const themeconfig = createTheme({
       contrastText: 'rgba(255,255,255,0.87)',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#5e798d',
       contrastText: '#2DBE60',
     },
     accent1: {

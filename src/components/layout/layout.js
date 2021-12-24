@@ -8,12 +8,11 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Container from '@mui/material/Container';
-import { Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import Header from "../header/header"
-import "./layout.css"
+import "./layout.scss"
+import Footer from "../footer/footer";
 
 const theme = themeconfig
 const Layout = ({ children }) => {
@@ -31,10 +30,8 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <Container maxWidth="lg" style={{ marginTop: `12rem` }}>
-          <Button variant='contained'>Okay</Button>
           <main>{children}</main>
-        </Container>
+        <Footer></Footer>
       </ThemeProvider>
     </>
   )
