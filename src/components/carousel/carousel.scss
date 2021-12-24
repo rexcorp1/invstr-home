@@ -18,10 +18,12 @@
     line-height: normal !important;
     letter-spacing: .15px;
     margin: 15px 0 25px 0 !important;
+    height: 6rem;
 }
 
 .slick-track {
     margin-top: 10px;
+    height: auto !important;
 }
 
 .read-more {
@@ -29,9 +31,20 @@
     text-transform: uppercase;
     font-weight: 600 !important;
     font-size: 15px;
-    margin-top: 3rem;
 }
 
 .read-more a {
     text-decoration: none;
+}
+
+.slick-dots li {
+    margin: auto !important;
+}
+
+.slick-dots li button:before {
+    font-size: 12px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: black;
 }

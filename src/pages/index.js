@@ -1,9 +1,9 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import '../assets/styling/cssReset.scss';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "gatsby"
-import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
+import { Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
 import Carousel from "../components/carousel/carousel"
@@ -76,6 +76,25 @@ export const ValueInvestor = ({ number, content }) => {
 }
 
 const IndexPage = () => {
+
+  // Client-side Runtime Data Fetching
+  // const [starsCount, setStarsCount] = useState([])
+  useEffect(() => {
+    // get data from GitHub api
+    fetch(`https://landx.id/blog/rss/`, {
+      mode: "no-cors",
+      headers: {
+        'Accept': 'application/xml; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+      }
+    }).then(response => response.text())
+      // .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      .then(data => {
+        console.log(data)
+        // setStarsCount(resultData)
+      }) // set data for the number of stars
+  }, [])
+
   const settings = {
     dots: true,
     infinite: false,
@@ -192,11 +211,31 @@ const IndexPage = () => {
           </Grid>
 
           {/* TODO: Get data from API LandX */}
-          <Carousel />
+          <Carousel type="artikel"/>
+
+          <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid item>
+              <Link href="https://landx.id/blog/" style={{ textDecoration:`none` }}>
+                <Button style={{ fontWeight:600, marginTop:`3rem`, marginBottom:`3rem` }}>
+                  KUNJUNGI BLOG LANDX
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
 
         </Container>
       </section>
-    </Layout >
+
+      <hr/>
+      <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
+        <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
+          
+          {/* TODO: Get data from API LandX */}
+          <Carousel/>
+
+        </Container>
+      </section>
+  </Layout >
   )
 }
 
