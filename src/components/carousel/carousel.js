@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Box, Typography } from '@mui/material'
 import Slider from "react-slick"
 
-import "slick-carousel/slick/slick.css" 
+import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./carousel.scss"
 import { Link } from "gatsby"
@@ -30,28 +30,28 @@ const Carousel = ({ datas }) => {
     ];
 
     // var names = ['Jake', 'Jon', 'Thruster'];
-    
+
     const settings = {
         dots: true,
         arrows: false,
         slidesToShow: 3,
         autoplay: false,
         responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
             }
-          }
         ]
-      };
+    };
 
-    return(
+    return (
         <Slider {...settings}>
-            {dummy.map(data => (  
-                <Box className="card-border">
+            {dummy.map(data => (
+                <Box className="card-border" key={data.tag}>
                     <Box className="card-body">
-                        <Typography color="secondary" style={{ fontSize: `11px`}}>
+                        <Typography color="secondary" style={{ fontSize: `11px` }}>
                             {data.tag}
                         </Typography>
                         <Typography color="secondary" className="article-title">

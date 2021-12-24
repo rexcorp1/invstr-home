@@ -30,11 +30,11 @@ const ResponsiveAppBar = () => {
   }
 
   const linksName = [
-    'Mengapa Landx',
-    'Proyek',
-    'Cara Kerja',
-    'Kontak',
-    'Blog'
+    ['#why-landx', 'Mengapa Landx'],
+    ['#ongoing-projects', 'Proyek'],
+    ['#how-it-works', 'Cara Kerja'],
+    ['https://landx.id/contact.html', 'Kontak'],
+    ['https://landx.id/blog/', 'Blog']
   ]
 
 
@@ -47,9 +47,9 @@ const ResponsiveAppBar = () => {
             <Box>
               <Box sx={{ display: 'flex' }}>
                 {linksName && linksName.map(linkName => (
-                  <MenuItem key={linkName}>
+                  <MenuItem key={linkName[1]}>
                     <Typography textAlign="center">
-                      <Link to='/' style={{ textDecoration: 'none', color: '#000' }}>{linkName}</Link>
+                      <Link to={linkName[0]} style={{ textDecoration: 'none', color: '#000' }}>{linkName[1]}</Link>
                     </Typography>
                   </MenuItem>
                 ))}

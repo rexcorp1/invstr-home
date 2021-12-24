@@ -1,20 +1,23 @@
 import * as React from "react"
 import '../assets/styling/cssReset.scss';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Link } from "gatsby"
-import { Container, Grid, Typography, Card, Chip, CardContent, CardMedia, LinearProgress, Button } from '@mui/material';
+import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
 import Carousel from "../components/carousel/carousel"
 import './index.scss';
-// import "../assets/styling/style.scss"
+import CardProject from "../components/Card/CardProject/CardProject";
+import Slider from 'react-slick';
 
 export const CardWhyLandx = ({ title, content, logo }) => {
   return (
-    <Grid item md={4} >
-      <Card className='container-card-icon'>
+    <Grid item md={4}>
+      <Card className='card-why-landx'>
         <div>
           <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={logo} alt="Star Icon" className="card-icon" />
+            <img src={logo} alt={title} className="card-icon" />
           </div>
           <CardContent>
             <h5 className="title-icon">
@@ -30,77 +33,123 @@ export const CardWhyLandx = ({ title, content, logo }) => {
   )
 }
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
+export const TitleSection = ({ title }) => {
+  return (
+    <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Grid item>
+        <h2 className='title-section'>
+          {title}
+        </h2>
+        <hr className='divider' />
+      </Grid>
+    </Grid>
+  )
+}
 
-    <header class="homepage">
-      <Container>
-        <Grid container>
-          <Grid item md={6}>
-            <Grid container>
-              <Grid item>
-                <Typography variant="h1" className="heroTitle">
-                  Investasi dan Miliki Bisnis Menguntungkan Mulai dari Rp 1.000.000
-                </Typography>
-                <p className='heroDescription'>
-                  Investasi secara patungan online ke perusahaan-perusahaan UMKM di Indonesia pilihan kamu melalui platform securities crowdfunding LandX.
-                </p>
-              </Grid>
-              <Grid item>
-                <img src="./images/logo_OJK.webp" alt="logo OJK" />
-              </Grid>
-              <Grid item>
-                <Link to='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
-                  <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo' />
-                </Link>
-                <Link to='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
-                  <img src="./images/AppStore.webp" alt="AppStore" />
-                </Link>
+export const CardLandxWork = ({ img, title, content, height = '72px', width = '72px' }) => {
+  return (
+    <Grid item md={3}>
+      <Card sx={{ maxWidth: 345 }} className='card-landx-work'>
+        <div className="container-img">
+          <img src={img} alt={title} className='card-img' height={height} width={width} />
+        </div>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" className="card-title">
+            {title}
+          </Typography>
+          <Typography variant="body2" className='card-content'>
+            {content}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
+  )
+}
+
+export const ValueInvestor = ({ number, content }) => {
+  return (
+    <Grid item className="container-value-investor">
+      <Typography variant='h4' className="num-value" sx={{ marginBottom: '5px' }}>{number}</Typography>
+      <p>{content}</p>
+    </Grid>
+  )
+}
+
+const IndexPage = () => {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 830,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  };
+
+  return (
+    <Layout>
+      <Seo title="Home" />
+
+      <div className="homepage">
+        <Container>
+          <Grid container>
+            <Grid item md={6}>
+              <Grid container>
+                <Grid item>
+                  <Typography variant="h1" className="heroTitle">
+                    Investasi dan Miliki Bisnis Menguntungkan Mulai dari Rp 1.000.000
+                  </Typography>
+                  <p className='heroDescription'>
+                    Investasi secara patungan online ke perusahaan-perusahaan UMKM di Indonesia pilihan kamu melalui platform securities crowdfunding LandX.
+                  </p>
+                </Grid>
+                <Grid item>
+                  <img src="./images/logo_OJK.webp" alt="logo OJK" />
+                </Grid>
+                <Grid item>
+                  <Link to='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
+                    <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo' />
+                  </Link>
+                  <Link to='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
+                    <img src="./images/AppStore.webp" alt="AppStore" />
+                  </Link>
+                </Grid>
               </Grid>
             </Grid>
+            <Grid item md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Y03A0VgY_ug" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            </Grid>
           </Grid>
-          <Grid item md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Y03A0VgY_ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </Grid>
-        </Grid>
-      </Container>
-    </header>
+        </Container>
+      </div>
 
-    <main>
+
       <section>
-        <Container id="why-landx">
+        <Container>
           <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-            <Grid item>
-              <Typography variant='h4' sx={{ marginBottom: '5px' }}>71.674</Typography>
-              <p>Investor Terdaftar</p>
-            </Grid>
-            <Grid item>
-              <Typography variant='h4' sx={{ marginBottom: '5px' }}>26</Typography>
-              <p>Perusahaan Penerbit</p>
-            </Grid>
-            <Grid item>
-              <Typography variant='h4' sx={{ marginBottom: '5px' }}>153,18 Miliar</Typography>
-              <p>Investasi Tersalurkan</p>
-            </Grid>
-            <Grid item>
-              <Typography variant='h4' sx={{ marginBottom: '5px' }}>2,48 Miliar</Typography>
-              <p>Dividen Dibagikan</p>
-            </Grid>
+            <ValueInvestor number='71.810' content='Investor Terdaftar' />
+            <ValueInvestor number='26' content='Perusahaan Penerbit' />
+            <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
+            <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
           </Grid>
         </Container>
       </section>
 
       <section style={{ backgroundColor: '#f8f8f8', padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
-        <Container>
-          <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Grid item>
-              <h2 className='title-section'>
-                Mengapa Memilih LandX
-              </h2>
-              <hr className='divider' />
-            </Grid>
-          </Grid>
+        <Container id="why-landx">
+          <TitleSection title='Mengapa Memilih LandX' />
 
           <Grid container spacing={4}>
             <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
@@ -111,97 +160,24 @@ const IndexPage = () => (
       </section>
 
       <section style={{ padding: '30px' }}>
-        <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Grid item>
-            <h2 className='title-section'>
-              Pendanaan yang Sedang Berlangsung
-            </h2>
-            <hr className='divider' />
+        <Container id='ongoing-projects'>
+          <TitleSection title='Pendanaan yang Sedang Berlangsung' />
+
+          <CardProject settings={settings} />
+        </Container>
+      </section>
+
+      <section>
+        <Container id='how-it-works'>
+          <TitleSection title='Cara Kerja LandX' />
+
+          <Grid container spacing={4}>
+            <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
+            <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
+            <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
+            <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
           </Grid>
-        </Grid>
-
-        <Grid container>
-          <Grid item>
-            <Card className="card-project">
-              <CardMedia
-                component="img"
-                height="194"
-                image="/images/1.webp"
-                alt="Kapan Tongkang"
-              />
-              <CardContent>
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={9}>
-                  </Grid>
-                  <Grid item xs={3} className='btn-container-buy'>
-                    <Button variant="contained" className="btn-buy">
-                      <span className='f-buy'>BELI</span>
-                    </Button>
-                  </Grid>
-                </Grid>
-
-                <div className="card-code">PMBB</div>
-                <h2 className="card-title">Padang Merdeka - PT Merdeka Bisnis Bersama</h2>
-                <Chip label="Restaurant" color="success" variant="outlined" className="chip-text" />
-
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={9} className='card-price'>
-                    Rp 3.750.000.000
-                  </Grid>
-                  <Grid item xs={3} className='card-price'>
-                    0
-                  </Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={9} className='card-text-detail'>
-                    dari Rp 3.750.000.000 Total Pendanaan
-                  </Grid>
-                  <Grid item xs={3} className='card-text-detail'>
-                    Hari Lagi
-                  </Grid>
-                </Grid>
-
-                <LinearProgress variant="determinate" value={50} />
-
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={6} className='card-text-detail'>
-                    <span>Harga Per Lot</span>
-                  </Grid>
-                  <Grid item xs={6} className='card-text-detail'>
-                    <span>Jumlah Lot</span>
-                  </Grid>
-                </Grid>
-
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={6} className='card-title'>
-                    <span>Rp. 1.000.000</span>
-                  </Grid>
-                  <Grid item xs={6} className='card-title'>
-                    <span>3750</span>
-                  </Grid>
-                </Grid>
-
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={6} className='card-text-detail'>
-                    <span>Periode Dividen</span>
-                  </Grid>
-                  <Grid item xs={6} className='card-text-detail'>
-                    <span>Estimasi Dividen</span>
-                  </Grid>
-                </Grid>
-
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <Grid item xs={6} className='card-title'>
-                    <span>Per 3 bulan</span>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <span className='card-title'>10-20%</span> <span className='card-text-detail-2'>Per Tahun</span>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+        </Container>
       </section>
 
       <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
@@ -216,19 +192,12 @@ const IndexPage = () => (
           </Grid>
 
           {/* TODO: Get data from API LandX */}
-          <Carousel/>
+          <Carousel />
 
         </Container>
       </section>
-    </main>
-
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
-  </Layout >
-)
+    </Layout >
+  )
+}
 
 export default IndexPage
